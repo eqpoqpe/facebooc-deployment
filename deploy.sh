@@ -16,6 +16,8 @@ tar -xzf $template_file_dir/facebooc-bin.tar.gz -C $bin_exec_dir/
 
 cd $bin_exec_dir
 
-if [ $(pwd) = $bin_exec_dir ] && [ -e "$bin_exec_dir" ]; then
-	./bin/facebooc
-fi
+#if [ $(pwd) = $bin_exec_dir ] && [ -e "$bin_exec_dir" ]; then
+#	./bin/facebooc
+#fi
+
+./bin/facebooc
