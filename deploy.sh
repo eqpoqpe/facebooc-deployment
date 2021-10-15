@@ -1,15 +1,21 @@
 #!/bin/bash
 
-echo "Deploy for facebooc [https://github.com/jsver/facebooc]"
+echo "Deploy for facebooc [https://github.com/jserv/facebooc]"
 
-cd /root
+declare readonly root_dir="/root"
+declare readonly bin_exec_dir="/opt/facebooc"
+declare readonly template_file_dir="/tmp"
 
-curl --retry 10 --retry-max-time 60 -H "Cache-Control: no-cache" -fsSL github.com/eqpoqpe/facebooc-deploy/releases/download/v1.0.0/facebooc-v1.0.0-amd64_linux.tar.gz -o /root/facebooc-bin.tar.gz
+cd $root_dir
 
-cd /root
+curl --retry 10 --retry-max-time 60 -H "Cache-Control: no-cache" -fsSL github.com/eqpoqpe/facebooc-deploy/releases/download/v1.0.0/facebooc-v1.0.0-amd64_linux.tar.gz -o /tmp/facebooc-bin.tar.gz
 
-tar -xzf /root/facebooc-bin.tar.gz
+cd $root_dir
 
-cd /root/facebooc
+tar -xzf $template_file_dir/facebooc-bin.tar.gz -C $bin_exec_dir/
 
-./bin/facebooc
+cd $bin_exec_dir
+
+if [ $(pwd) = $bin_exec_dir ] && [ -e "$bin_exec_dir" ]; then
+	./bin/facebooc
+fi
