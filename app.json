@@ -1,0 +1,8 @@
+{
+	"name": "facebooc",
+	"description": "deploy facebooc with heroki",
+	"env": {},
+	"website": "",
+	"repository": "https://github.com/eqpoqpe/facebooc-deploy",
+	"stack": "container"
+}

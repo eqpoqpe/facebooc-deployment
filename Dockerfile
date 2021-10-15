@@ -1,3 +1,9 @@
 FROM ubuntu:latest
 
-RUN apt update && apt install git && git clone https://github.com/jsver/facebooc
+RUN apt update && mkdir /opt/facebooc
+
+ADD deploy.sh /opt/facebooc/deploy.sh
+
+RUN chmod +x /opt/facebooc/deploy.sh
+
+ENTRYPOINT ["sh", "-c", "/opt/entrypoint.sh"]
