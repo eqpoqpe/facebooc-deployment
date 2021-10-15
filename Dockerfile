@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-RUN apt update && mkdir /opt/facebooc
+RUN apt update && apt install curl && mkdir /opt/facebooc
 
 ADD deploy.sh /opt/facebooc/deploy.sh
 
