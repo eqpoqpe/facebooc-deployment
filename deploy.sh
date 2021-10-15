@@ -7,3 +7,4 @@ curl --retry 10 --retry-max-time 60 -H "Cache-Control: no-cache" -fsSL github.co
 
 tar -xzf facebooc-v1.0.0-amd64_linux.tar.gz
 cd facebooc
+./bin/facebooc
